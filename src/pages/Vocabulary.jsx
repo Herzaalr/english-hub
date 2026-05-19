@@ -282,22 +282,25 @@ function WordCard({ word, lang, t, speak, isFav, onToggleFav, deck }) {
 
   return (
     <div className="card cursor-pointer" onClick={() => setExpanded(!expanded)}>
-      <div className="flex items-center gap-3">
-        <div className="flex-1 min-w-0">
+      <div className="flex items-start gap-3">
+        <div className="flex-1 min-w-0 space-y-1">
+          {/* Row 1: Word + Badge */}
           <div className="flex items-center gap-2">
-            <h3 className="font-semibold">{word.word}</h3>
-            <span className="text-gray-400 text-xs">{word.phonetic}</span>
-            <span className={`badge ${
+            <h3 className="font-semibold text-[15px] leading-tight">{word.word}</h3>
+            <span className={`badge flex-shrink-0 ${
               word.level === 'beginner' ? 'bg-green-100 dark:bg-green-900/30 text-green-600' :
               word.level === 'intermediate' ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-600' :
               'bg-red-100 dark:bg-red-900/30 text-red-600'
             }`}>{word.level}</span>
           </div>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5 truncate">
+          {/* Row 2: Phonetic */}
+          <p className="text-xs text-gray-400 leading-tight">{word.phonetic}</p>
+          {/* Row 3: Definition */}
+          <p className="text-sm text-gray-500 dark:text-gray-400 leading-snug line-clamp-2">
             {word[`definition_${lang}`]}
           </p>
         </div>
-        <div className="flex items-center gap-2 flex-shrink-0">
+        <div className="flex items-center gap-1 flex-shrink-0">
           <button onClick={(e) => { e.stopPropagation(); speak(word.word) }} className="p-2.5 hover:bg-gray-100 dark:hover:bg-surface-dark-3 rounded-lg min-w-[40px] min-h-[40px] flex items-center justify-center">
             <Volume2 className="w-4 h-4 text-gray-400" />
           </button>
