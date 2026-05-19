@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased;
+    @apply bg-white text-gray-900;
+    @apply dark:bg-surface-dark dark:text-gray-100;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-surface-dark-2 rounded-2xl border border-gray-100 dark:border-gray-800 p-6 transition-all duration-300;
+  }
+  .card:hover {
+    @apply shadow-lg dark:shadow-brand-900/20 -translate-y-0.5;
+  }
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-700 text-white font-medium px-6 py-2.5 rounded-xl transition-all duration-200 active:scale-95;
+  }
+  .btn-secondary {
+    @apply bg-gray-100 dark:bg-surface-dark-3 hover:bg-gray-200 dark:hover:bg-gray-700 font-medium px-6 py-2.5 rounded-xl transition-all duration-200;
+  }
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200;
+  }
+  .sidebar-link.active {
+    @apply bg-brand-50 dark:bg-brand-900/20 text-brand-700 dark:text-brand-400;
+  }
+  .sidebar-link:not(.active) {
+    @apply text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-surface-dark-3 hover:text-gray-700 dark:hover:text-gray-200;
+  }
+  .stat-card {
+    @apply relative overflow-hidden rounded-2xl p-5;
+  }
+  .progress-ring {
+    @apply w-16 h-16 rounded-full border-4 border-gray-100 dark:border-gray-700;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.gray.300') transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: theme('colors.gray.300');
+    border-radius: 20px;
+  }
+  .dark .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: theme('colors.gray.600');
+  }
+  .glass {
+    @apply backdrop-blur-xl bg-white/70 dark:bg-surface-dark/70;
+  }
+}
