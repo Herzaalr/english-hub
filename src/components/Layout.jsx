@@ -73,6 +73,13 @@ export default function Layout() {
         {/* Page Content */}
         <div className="p-4 lg:p-8 max-w-[1400px]">
           <Outlet />
+
+          {/* Footer */}
+          <footer className="mt-12 pb-6 text-center">
+            <p className="text-xs text-gray-400 dark:text-gray-500">
+              Created by <span className="font-semibold text-gray-500 dark:text-gray-400">Herzaalr</span>
+            </p>
+          </footer>
         </div>
       </main>
     </div>
