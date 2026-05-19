@@ -57,10 +57,13 @@ export default function Layout() {
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
 
-          {/* Mobile Logo */}
-          <span className="lg:hidden font-bold text-sm">
+          {/* Mobile Logo — clickable to Dashboard */}
+          <button
+            onClick={() => window.location.href = '/'}
+            className="lg:hidden font-bold text-sm"
+          >
             English<span className="text-brand-500">Hub</span>
-          </span>
+          </button>
 
           <div className="flex items-center gap-3">
             <ThemeToggle />
@@ -71,7 +74,7 @@ export default function Layout() {
         </header>
 
         {/* Page Content */}
-        <div className="p-4 lg:p-8 max-w-[1400px]">
+        <div className="p-4 lg:p-8 max-w-[1400px] pb-24 lg:pb-8">
           <Outlet />
 
           {/* Footer */}

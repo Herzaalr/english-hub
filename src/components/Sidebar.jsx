@@ -78,8 +78,8 @@ export default function Sidebar({ collapsed, onToggle }) {
         ${collapsed ? 'lg:w-[68px]' : 'lg:w-[240px]'}
       `}
     >
-      {/* Logo */}
-      <div className="flex items-center gap-2.5 px-4 h-14 lg:h-16 border-b border-gray-100 dark:border-gray-800">
+      {/* Logo — clickable to Dashboard */}
+      <a href="/" className="flex items-center gap-2.5 px-4 h-14 lg:h-16 border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-surface-dark-3 transition-colors">
         <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center flex-shrink-0">
           <Zap className="w-4 h-4 text-white" />
         </div>
@@ -88,7 +88,7 @@ export default function Sidebar({ collapsed, onToggle }) {
             English<span className="text-brand-500">Hub</span>
           </span>
         )}
-      </div>
+      </a>
 
       {/* XP Bar */}
       {!collapsed && (

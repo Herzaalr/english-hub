@@ -166,7 +166,7 @@ export default function Vocabulary() {
               <button
                 key={id}
                 onClick={() => setCategory(id)}
-                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
+                className={`px-3 py-2 rounded-full text-xs font-medium transition-all min-h-[36px] ${
                   category === id
                     ? 'bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-300 ring-1 ring-brand-300'
                     : 'bg-gray-100 dark:bg-surface-dark-3 text-gray-500 hover:bg-gray-200 dark:hover:bg-gray-700'
@@ -298,10 +298,10 @@ function WordCard({ word, lang, t, speak, isFav, onToggleFav, deck }) {
           </p>
         </div>
         <div className="flex items-center gap-2 flex-shrink-0">
-          <button onClick={(e) => { e.stopPropagation(); speak(word.word) }} className="p-1.5 hover:bg-gray-100 dark:hover:bg-surface-dark-3 rounded-lg">
+          <button onClick={(e) => { e.stopPropagation(); speak(word.word) }} className="p-2.5 hover:bg-gray-100 dark:hover:bg-surface-dark-3 rounded-lg min-w-[40px] min-h-[40px] flex items-center justify-center">
             <Volume2 className="w-4 h-4 text-gray-400" />
           </button>
-          <button onClick={(e) => { e.stopPropagation(); onToggleFav() }} className="p-1.5 hover:bg-gray-100 dark:hover:bg-surface-dark-3 rounded-lg">
+          <button onClick={(e) => { e.stopPropagation(); onToggleFav() }} className="p-2.5 hover:bg-gray-100 dark:hover:bg-surface-dark-3 rounded-lg min-w-[40px] min-h-[40px] flex items-center justify-center">
             {isFav ? <Star className="w-4 h-4 text-amber-500 fill-amber-500" /> : <StarOff className="w-4 h-4 text-gray-400" />}
           </button>
           {deck && (
