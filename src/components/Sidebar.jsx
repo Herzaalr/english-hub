@@ -3,7 +3,7 @@ import {
   LayoutDashboard, BookOpen, Languages, Mic, Headphones, BookText,
   Volume2, Layers, Globe, Film, MessageCircle, Bot, Search,
   FlaskConical, GraduationCap, FileText, Settings, ChevronLeft,
-  ChevronRight, Languages as LangIcon, Zap
+  ChevronRight, Zap
 } from 'lucide-react'
 import useLangStore from '../store/langStore'
 import useProgressStore from '../store/progressStore'
@@ -37,6 +37,7 @@ const researchLinks = [
 ]
 
 function SidebarSection({ label, links, collapsed }) {
+  const t = useLangStore(s => s.t)
   return (
     <div className="mb-2">
       {label && !collapsed && (
@@ -52,10 +53,10 @@ function SidebarSection({ label, links, collapsed }) {
           className={({ isActive }) =>
             `sidebar-link ${isActive ? 'active' : ''} ${collapsed ? 'justify-center px-0' : ''}`
           }
-          title={collapsed ? key : undefined}
+          title={collapsed ? t(key) : undefined}
         >
           <Icon className="w-[18px] h-[18px] flex-shrink-0" />
-          {!collapsed && <span className="truncate">{useLangStore.getState().t(key)}</span>}
+          {!collapsed && <span className="truncate">{t(key)}</span>}
         </NavLink>
       ))}
     </div>
@@ -64,19 +65,21 @@ function SidebarSection({ label, links, collapsed }) {
 
 export default function Sidebar({ collapsed, onToggle }) {
   const t = useLangStore(s => s.t)
-  const lang = useLangStore(s => s.lang)
   const toggleLang = useLangStore(s => s.toggleLang)
   const { level, xp, streak } = useProgressStore()
-  const location = useLocation()
 
   return (
     <aside
-      className={`fixed left-0 top-0 h-screen z-40 flex flex-col border-r border-gray-100 dark:border-gray-800 bg-white dark:bg-surface-dark transition-all duration-300 ${
-        collapsed ? 'w-[68px]' : 'w-[240px]'
-      }`}
+      className={`
+        fixed left-0 top-0 h-screen z-50 flex flex-col
+        border-r border-gray-100 dark:border-gray-800
+        bg-white dark:bg-surface-dark transition-all duration-300
+        w-[280px] lg:w-auto
+        ${collapsed ? 'lg:w-[68px]' : 'lg:w-[240px]'}
+      `}
     >
       {/* Logo */}
-      <div className="flex items-center gap-2.5 px-4 h-16 border-b border-gray-100 dark:border-gray-800">
+      <div className="flex items-center gap-2.5 px-4 h-14 lg:h-16 border-b border-gray-100 dark:border-gray-800">
         <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center flex-shrink-0">
           <Zap className="w-4 h-4 text-white" />
         </div>
@@ -116,17 +119,15 @@ export default function Sidebar({ collapsed, onToggle }) {
 
       {/* Footer */}
       <div className="border-t border-gray-100 dark:border-gray-800 p-3 space-y-2">
-        {/* Language Toggle */}
         <button
           onClick={toggleLang}
           className={`sidebar-link w-full ${collapsed ? 'justify-center px-0' : ''}`}
           title="Switch language"
         >
-          <LangIcon className="w-[18px] h-[18px] flex-shrink-0" />
+          <Globe className="w-[18px] h-[18px] flex-shrink-0" />
           {!collapsed && <span className="text-xs">{t('switchLang')}</span>}
         </button>
 
-        {/* Settings */}
         <NavLink
           to="/settings"
           className={({ isActive }) =>
@@ -137,10 +138,10 @@ export default function Sidebar({ collapsed, onToggle }) {
           {!collapsed && <span>{t('settings')}</span>}
         </NavLink>
 
-        {/* Collapse Toggle */}
+        {/* Collapse Toggle — desktop only */}
         <button
           onClick={onToggle}
-          className="sidebar-link w-full text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+          className="sidebar-link w-full text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hidden lg:flex"
         >
           {collapsed ? (
             <ChevronRight className="w-[18px] h-[18px]" />

@@ -109,7 +109,7 @@ export default function Listening() {
       </div>
 
       {/* Audio Controls */}
-      <div className="card flex items-center gap-4">
+      <div className="card flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
         <button
           onClick={() => isPlaying ? stopSpeech() : speak(selected.transcript)}
           className="w-12 h-12 rounded-full bg-violet-500 hover:bg-violet-600 text-white flex items-center justify-center transition-all"

@@ -122,7 +122,7 @@ export default function Grammar() {
             <p className="text-sm text-gray-400 mb-1">Which tense is this?</p>
             <p className="text-lg font-semibold mt-2 italic">"{quizTenses[quizIndex].example}"</p>
 
-            <div className="grid grid-cols-2 gap-2 mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-6">
               {grammarData.slice(0, 8).map((g) => (
                 <button
                   key={g.id}

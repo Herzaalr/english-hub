@@ -108,7 +108,7 @@ export default function PedagogyPartner() {
 
       {/* Chat Area */}
       <div className="card p-0 overflow-hidden max-w-3xl mx-auto">
-        <div className="h-[500px] overflow-y-auto p-4 space-y-4 scrollbar-thin">
+        <div className="h-[350px] sm:h-[500px] overflow-y-auto p-4 space-y-4 scrollbar-thin">
           {messages.map((msg, i) => (
             <div key={i} className={`flex gap-3 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
               {msg.role === 'assistant' && (
