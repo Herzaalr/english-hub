@@ -20,6 +20,7 @@ import SlangCorpus from './pages/SlangCorpus'
 import ResearchMatrix from './pages/ResearchMatrix'
 import PedagogyTools from './pages/PedagogyTools'
 import ThesisTracker from './pages/ThesisTracker'
+import AccentTrainer from './pages/AccentTrainer'
 import Settings from './pages/Settings'
 
 export default function App() {
@@ -50,6 +51,7 @@ export default function App() {
         <Route path="research" element={<ResearchMatrix />} />
         <Route path="tools" element={<PedagogyTools />} />
         <Route path="thesis" element={<ThesisTracker />} />
+        <Route path="accent" element={<AccentTrainer />} />
         <Route path="settings" element={<Settings />} />
       </Route>
     </Routes>

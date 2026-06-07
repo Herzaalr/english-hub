@@ -11,6 +11,7 @@ A comprehensive English learning platform built with React, TailwindCSS, and Zus
 - **Listening** — Audio exercises with comprehension quizzes
 - **Reading** — Articles with inline vocabulary and quizzes
 - **Pronunciation** — IPA sounds, minimal pairs, connected speech
+- **American Accent Trainer** — R sounds, flap T, dark L, vowel shifts, linking, US vs UK, shadowing
 
 ### Smart Features
 - **Smart Flashcards** — SM-2 spaced repetition algorithm

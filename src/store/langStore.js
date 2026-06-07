@@ -86,6 +86,10 @@ const translations = {
     sounds: 'Sounds',
     practiceIPA: 'Practice IPA',
 
+    accentTrainer: 'Accent Trainer',
+    accentTitle: 'American Accent Trainer',
+    accentSubtitle: 'Master the American accent: heavy R, flap T, reductions, and natural rhythm.',
+
     flashTitle: 'Smart Flashcards',
     flashSubtitle: 'Spaced repetition powered by SM-2 algorithm. Study smarter, not harder.',
     dueCards: 'Due Cards',
@@ -239,6 +243,10 @@ const translations = {
     pronunSubtitle: 'Kuasai bunyi bahasa Inggris dengan panduan IPA dan audio.',
     sounds: 'Bunyi',
     practiceIPA: 'Latihan IPA',
+
+    accentTrainer: 'Pelatih Aksen',
+    accentTitle: 'Pelatih Aksen Amerika',
+    accentSubtitle: 'Kuasai aksen Amerika: R berat, flap T, reduksi, dan ritme natural.',
 
     flashTitle: 'Kartu Pintar',
     flashSubtitle: 'Pengulangan berjarak dengan algoritma SM-2. Belajar lebih cerdas.',

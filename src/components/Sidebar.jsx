@@ -16,6 +16,7 @@ const mainLinks = [
   { to: '/listening', icon: Headphones, key: 'listening' },
   { to: '/reading', icon: BookText, key: 'reading' },
   { to: '/pronunciation', icon: Volume2, key: 'pronunciation' },
+  { to: '/accent', icon: Zap, key: 'accentTrainer' },
   { to: '/flashcards', icon: Layers, key: 'flashcards' },
 ]
 
